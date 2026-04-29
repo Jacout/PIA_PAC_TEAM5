@@ -1,7 +1,10 @@
-#ifndef HERRAMIENTAS_H_INCLUDED
-#define HERRAMIENTAS_H_INCLUDED
-#include <string>
+#ifndef HERRA_H_INCLUDED
+#define HERRA_H_INCLUDED
 
+void guardar_log();
+void leer_archivo();
+
+/*
 class manejo_arc{
 
     public:
@@ -11,6 +14,8 @@ class manejo_arc{
 
     private:
     std::string ruta;
-}
+}¨
+*/
+
 
 #endif
