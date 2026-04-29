@@ -1,17 +1,16 @@
-#ifndef herramientas_H_INCLUDE
-#define herramientas_H_INCLUDED
+#ifndef HERRAMIENTAS_H_INCLUDED
+#define HERRAMIENTAS_H_INCLUDED
+#include <string>
 
-
-class entradas{
+class manejo_arc{
 
     public:
 
     void guardar_log();
+    void leer_archivo();
 
     private:
-    string rutas;
-
-
+    std::string ruta;
 }
 
 #endif
