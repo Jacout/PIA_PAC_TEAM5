@@ -1,19 +1,25 @@
 #include "HashGenerator.h"
+#include "FileReader.h"
 #include <openssl/sha.h>
 #include <sstream>
 #include <iomanip>
 
-std::string generateSHA256(const std::vector<unsigned char>& data) {
-    unsigned char hash[SHA256_DIGEST_LENGTH];
+// Hash SHA256 usando OpenSSL. No almacena claves ni información sensible.
+std::string hashFromBytes(const std::vector<unsigned char>& data) {
+    unsigned char digest[SHA256_DIGEST_LENGTH];
+    SHA256_CTX ctx;
+    SHA256_Init(&ctx);
+    if (!data.empty()) SHA256_Update(&ctx, data.data(), data.size());
+    SHA256_Final(digest, &ctx);
 
-    SHA256(data.data(), data.size(), hash);
+    std::ostringstream oss;
+    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i)
+        oss << std::hex << std::setw(2) << std::setfill('0') << (int)digest[i];
+    return oss.str();
+}
 
-    std::stringstream ss;
-
-    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
-        ss << std::hex << std::setw(2) << std::setfill('0')
-           << static_cast<int>(hash[i]);
-    }
-
-    return ss.str();
+std::string hashFromFile(const std::string& path) {
+    auto data = readFile(path);
+    if (data.empty()) return {};
+    return hashFromBytes(data);
 }

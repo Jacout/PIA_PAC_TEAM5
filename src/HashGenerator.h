@@ -1,9 +1,7 @@
-#ifndef HASHGENERATOR_H
-#define HASHGENERATOR_H
-
-#include <vector>
+#pragma once
 #include <string>
+#include <vector>
 
-std::string generateSHA256(const std::vector<unsigned char>& data);
-
-#endif
+// Calcula SHA256 de datos binarios y devuelve hex en minúsculas.
+std::string hashFromBytes(const std::vector<unsigned char>& data);
+std::string hashFromFile(const std::string& path);
