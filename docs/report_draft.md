@@ -1,6 +1,6 @@
 # PIA: segundo avance — Team 5
 
-1. Descripción del Payload
+1. Descripción
 
 El proyecto es una herramienta modular desarrollada en C++ orientada al análisis básico de comportamiento de archivos, procesos y tráfico de red en un entorno controlado. El objetivo principal es demostrar técnicas defensivas relacionadas con lectura binaria, generación de hashes SHA256, captura controlada de tráfico mediante libpcap y enumeración pasiva de procesos utilizando el sistema de archivos /proc.
 
