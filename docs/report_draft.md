@@ -120,7 +120,7 @@ El módulo trabaja únicamente en modo lectura y no interactúa con los procesos
 
 # 6. Trabajo Pendiente
 
-El proyecto aún cuenta con varias mejoras planeadas para futuras versiones.
+El proyecto aún cuenta con varias mejoras planeadas.
 
 Entre las tareas pendientes se encuentran:
 
