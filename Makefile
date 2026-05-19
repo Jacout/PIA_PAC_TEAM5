@@ -3,7 +3,15 @@ CXXFLAGS := -std=c++17 -g -Wall -Wextra -I./src
 LDFLAGS := -lpcap -lssl -lcrypto
 SRCDIR := src
 BINDIR := bin
-SOURCES := $(wildcard $(SRCDIR)/*.cpp)
+
+# Archivos a compilar (excluir guardar.cpp y main_update.cpp)
+SOURCES := $(SRCDIR)/main.cpp \
+           $(SRCDIR)/FileReader.cpp \
+           $(SRCDIR)/HashGenerator.cpp \
+           $(SRCDIR)/Logger.cpp \
+           $(SRCDIR)/Sniffer.cpp \
+           $(SRCDIR)/ProcessEnumerator.cpp
+
 OBJECTS := $(patsubst $(SRCDIR)/%.cpp,$(SRCDIR)/%.o,$(SOURCES))
 TARGET_DEBUG := $(BINDIR)/pia_team5_debug
 TARGET_STRIPPED := $(BINDIR)/pia_team5_stripped
